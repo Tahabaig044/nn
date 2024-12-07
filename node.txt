@@ -1,0 +1,49 @@
+Here are the solutions:
+
+File 1: shape.js
+
+// Define and export Shape interface
+export interface Shape {
+  name: string;
+  area: number;
+  calculateArea(): number;
+}
+
+
+File 2: circle.js
+
+// Import Shape interface
+import { Shape } from './shape.js';
+
+// Define and export Circle class
+export class Circle implements Shape {
+  name: string;
+  radius: number;
+
+  constructor(radius: number) {
+    this.name = 'Circle';
+    this.radius = radius;
+  }
+
+  calculateArea(): number {
+    return Math.PI * this.radius ** 2;
+  }
+}
+
+
+File 3: main.js
+
+// Import Circle class
+import { Circle } from './circle.js';
+
+// Create an instance of Circle
+const circle = new Circle(5);
+
+// Print name and area
+console.log(`Name: ${circle.name}`);
+console.log(`Area: ${circle.calculateArea()}`);
+
+
+To run the code, save all three files in the same directory and execute node main.js in your terminal. This will print the name and area of the circle to the console.
+
+Note: As in the previous question, make sure to use the correct file paths when importing the interface and class. If the files are in different directories, adjust the paths accordingly.
